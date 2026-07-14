@@ -47,7 +47,9 @@ const CozyDivider = () => (
 );
 
 export default function App() {
-  const [apiBaseUrl, setApiBaseUrl] = useState("http://127.0.0.1:8000");
+  const [apiBaseUrl, setApiBaseUrl] = useState(
+    process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"
+  );
   const [apiStatus, setApiStatus] = useState("checking"); // checking | online | offline
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isDocsOpen, setIsDocsOpen] = useState(false);
